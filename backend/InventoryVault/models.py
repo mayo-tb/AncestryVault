@@ -12,7 +12,7 @@ class Person(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICE)
     profession = models.CharField(max_length=100, blank= True, null=True)
     description= models.TextField(blank=True, null=True)
-    profile_picture=models.ImageField( upload_to="profile_picture/", height_field=500, width_field=500, )
+    profile_picture=models.ImageField( upload_to="profile_picture/", blank=True,null=True )
     video_description= models.FileField(upload_to="video_description/", blank=True, null=True)
 
     parents = models.ManyToManyField('self', symmetrical=False, related_name="children", blank=True)
