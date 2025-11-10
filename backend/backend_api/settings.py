@@ -16,6 +16,9 @@ from dotenv import load_dotenv
 import os
 from supabase import create_client
 from django.conf import settings
+import dj_database_url
+
+
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,9 +40,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1rh^h17gh&g#%a83x1&w4c_a^-x2r)-&^$sye304!0!7^^4-x#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "ancestryvault-1.onrender.com", "localhost", "127.0.0.1"
+]
 
 
 # Application definition
